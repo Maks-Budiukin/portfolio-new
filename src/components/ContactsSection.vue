@@ -85,7 +85,7 @@
                         &#8213; Leave me
                         a <span class="text-[#F0BF6C]">message</span>:</p>
                 </div>
-                <form id="messageForm" @submit="sendMessage(theMessage)" class="flex flex-col gap-3">
+                <form id="messageForm" @submit.prevent="sendMessage(theMessage)" class="flex flex-col gap-3">
                     <div class="flex flex-col gap-2 text-white focus-within:text-[#F0BF6C] duration-300">
                         <label for="name">Your name</label>
                         <input v-model="name" id="name" type="text" autocomplete="true" required
