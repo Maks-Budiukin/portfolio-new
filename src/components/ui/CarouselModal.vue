@@ -1,0 +1,103 @@
+<template>
+    <DialogModal v-if="open" :open="open" @close="$emit('close')">
+        <template #modal-content>
+
+            <div class="relative w-[90vw]">
+                <ArrowButton :direction="'left'" shadow @click="onLeft(index)" />
+
+                <div class="bg-[#FFFFFF]">
+                    <Transition :name="transitionName" mode="out-in">
+                        <img v-if="currentImage" :key="currentImage" :src="currentImage" alt="screenshot"
+                            class="w-full">
+                    </Transition>
+                </div>
+
+                <ArrowButton shadow @click="onRight(index)" />
+            </div>
+        </template>
+    </DialogModal>
+</template>
+
+<script setup>
+import DialogModal from './DialogModal.vue'
+import ArrowButton from './ArrowButton.vue'
+import { ref } from 'vue'
+
+const props = defineProps({
+    open: {
+        type: Boolean,
+        required: true,
+    },
+    images: {
+        type: Array,
+        required: true,
+    },
+    currentImage: {
+        type: String,
+        required: true,
+    },
+    index: {
+        type: Number,
+        required: true
+    }
+})
+
+const transitionName = ref('right')
+
+const emit = defineEmits([
+    'close', 'update:index',
+])
+
+const onRight = (idx) => {
+    transitionName.value = 'right'
+
+    if (idx + 1 > props.images.length - 1) {
+        emit('update:index', 0)
+
+    } else {
+        emit('update:index', idx + 1)
+    }
+}
+
+const onLeft = (idx) => {
+    transitionName.value = 'left'
+
+    if (idx - 1 < 0) {
+        emit('update:index', props.images.length - 1)
+
+    } else {
+        emit('update:index', idx - 1)
+    }
+}
+
+</script>
+
+<style lang="scss" scoped>
+.right-enter-active,
+.right-leave-active,
+.left-enter-active,
+.left-leave-active {
+    transition: transform 0.2s ease, opacity 0.4s ease-in-out;
+}
+
+.right-enter-from {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.right-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.left-enter-from {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.left-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+
+}
+</style>
