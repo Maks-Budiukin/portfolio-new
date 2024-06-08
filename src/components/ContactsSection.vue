@@ -85,7 +85,7 @@
                         &#8213; Leave me
                         a <span class="text-[#F0BF6C]">message</span>:</p>
                 </div>
-                <form id="messageForm" @submit.prevent="sendMessage(theMessage)" class="flex flex-col gap-3">
+                <form id="messageForm" @submit.prevent="handleFormSubmit" class="flex flex-col gap-3">
                     <div class="flex flex-col gap-2 text-white focus-within:text-[#F0BF6C] duration-300">
                         <label for="name">Your name</label>
                         <input v-model="name" id="name" type="text" autocomplete="true" required
@@ -131,9 +131,11 @@ import Email from './icons/Email.vue'
 import LinkedIn from './icons/LinkedIn.vue'
 import Viber from './icons/Viber.vue'
 import Button from './ui/Button.vue'
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 
-import { sendMessage } from '@/composables/sendMessage'
+
+
+import { ref, sendMessage } from '@/composables/sendMessage'
 
 const name = ref('')
 const email = ref('')
@@ -143,6 +145,14 @@ const message = ref('')
 const theMessage = computed(() => {
     return `New message from CV-site!\n<b>Sender:</b> ${name.value} \n<b>Email:</b> ${email.value}\n<b>Contact:</b> ${preferredContact.value}\n<b>Message:</b> ${message.value}`
 })
+
+const handleFormSubmit = () => {
+    sendMessage(theMessage.value)
+    name.value = ''
+    email.value = ''
+    preferredContact.value = ''
+    message.value = ''
+}
 
 </script>
 
