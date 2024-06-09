@@ -36,7 +36,7 @@ import MyRoleSection from '../components/MyRoleSection.vue'
 import ContactsSection from '../components/ContactsSection.vue'
 import NavButton from '../components/ui/NavButton.vue'
 
-import { ref, onMounted, onBeforeMount } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 import { useFetch } from '@/composables/useFetch';
 
 import { useRoute } from 'vue-router'
