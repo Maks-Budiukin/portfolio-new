@@ -10,7 +10,7 @@
 
                 <div v-for="site in portfolio" :key="site.id" class="mx-auto">
                     <div class="col-span-1 portfolio-thumb relative cursor-pointer">
-                        <img :src="`http://localhost:1337${site.attributes.preview.data.attributes.url}`"
+                        <img :src="`https://test-strapi-mrqj.onrender.com${site.attributes.preview.data.attributes.url}`"
                             alt="My work-1" class="rounded-lg portfolio-picture h-full">
                         <div
                             class="button-container absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] hidden">

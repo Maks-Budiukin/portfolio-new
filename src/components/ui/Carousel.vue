@@ -12,8 +12,9 @@
                     <div class="py-4 border-y-[2px] border-[#F0BF6C] sm:border-none">
                         <Transition :name="transitionName" mode="out-in">
 
-                            <img @load="imageLoading" :key="currentImage" :src="`http://localhost:1337${currentImage}`"
-                                alt="" class="w-full sm:rounded-lg cursor-pointer big-image" @click="handleOpenModal">
+                            <img @load="imageLoading" :key="currentImage"
+                                :src="`https://test-strapi-mrqj.onrender.com${currentImage}`" alt=""
+                                class="w-full sm:rounded-lg cursor-pointer big-image" @click="handleOpenModal">
                         </Transition>
 
                     </div>
@@ -35,8 +36,8 @@
                             class="min-w-[200px] duration-300 border-[3px] rounded p-1 cursor-pointer"
                             :class="idx === currentImageIndex ? 'border-[#F0BF6C] min-w-[220px]' : 'border-transparent'">
 
-                            <img :src="`http://localhost:1337${image}`" alt="" @click="changeImage(idx)"
-                                class="rounded-sm">
+                            <img :src="`https://test-strapi-mrqj.onrender.com${image}`" alt=""
+                                @click="changeImage(idx)" class="rounded-sm">
                         </div>
 
                     </div>
@@ -47,7 +48,7 @@
             </div>
         </div>
         <CarouselModal :open="open" @close="open = false" :images="images"
-            :currentImage="`http://localhost:1337${currentFullImage}`" v-model="currentImageIndex" />
+            :currentImage="`https://test-strapi-mrqj.onrender.com${currentFullImage}`" v-model="currentImageIndex" />
     </div>
 </template>
 
