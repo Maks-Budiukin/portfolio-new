@@ -3,7 +3,7 @@
         <template #modal-content>
 
             <div class="relative w-[90vw]">
-                <ArrowButton :direction="'left'" shadow @click="onLeft(index)" />
+                <ArrowButton :direction="'left'" shadow @click="onLeft" />
 
                 <div class="bg-[#FFFFFF]">
                     <Transition :name="transitionName" mode="out-in">
@@ -12,7 +12,7 @@
                     </Transition>
                 </div>
 
-                <ArrowButton shadow @click="onRight(index)" />
+                <ArrowButton shadow @click="onRight" />
             </div>
         </template>
     </DialogModal>
@@ -36,37 +36,36 @@ const props = defineProps({
         type: String,
         required: true,
     },
-    index: {
+    modelValue: {
         type: Number,
-        required: true
-    }
+    },
 })
 
 const transitionName = ref('right')
 
 const emit = defineEmits([
-    'close', 'update:index',
+    'close', 'update:modelValue',
 ])
 
-const onRight = (idx) => {
+const onRight = () => {
     transitionName.value = 'right'
 
-    if (idx + 1 > props.images.length - 1) {
-        emit('update:index', 0)
+    if (props.modelValue + 1 > props.images.length - 1) {
+        emit('update:modelValue', 0)
 
     } else {
-        emit('update:index', idx + 1)
+        emit('update:modelValue', props.modelValue + 1)
     }
 }
 
-const onLeft = (idx) => {
+const onLeft = () => {
     transitionName.value = 'left'
 
-    if (idx - 1 < 0) {
-        emit('update:index', props.images.length - 1)
+    if (props.modelValue - 1 < 0) {
+        emit('update:modelValue', props.images.length - 1)
 
     } else {
-        emit('update:index', idx - 1)
+        emit('update:modelValue', props.modelValue - 1)
     }
 }
 

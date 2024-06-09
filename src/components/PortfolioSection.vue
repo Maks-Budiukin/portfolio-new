@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useFetch } from '@/composables/useFetch';
 
 const portfolio = ref([])
@@ -42,16 +42,9 @@ const portfolio = ref([])
 const getPortfolioData = async () => {
     const { data } = await useFetch()
     portfolio.value = data.data
-    console.log(data)
 }
 
 getPortfolioData()
-
-console.log(portfolio.value)
-
-onMounted(() => {
-    getPortfolioData()
-})
 
 </script>
 

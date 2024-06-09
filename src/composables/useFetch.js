@@ -14,6 +14,7 @@ export const useFetch = async (id) => {
 
   try {
     const { data } = await axios.get(url)
+
     return { data }
   } catch (error) {
     console.log(error.message)

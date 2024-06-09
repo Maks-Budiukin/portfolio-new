@@ -6,31 +6,17 @@
                 <h2 class="font-semibold text-5xl text-white">My skills</h2>
             </div>
 
-            <!-- <div class="grid grid-rows-2 grid-cols-2 sm:grid-cols-4 xl:grid-cols-6 gap-4 text-white text-xl"> -->
-            <Transition name="list"
-                class="grid grid-rows-2 grid-cols-2 sm:grid-cols-4 xl:grid-cols-6 gap-4 text-white text-xl">
-                <div v-if="true" class="max-h-[400px]">
-                    <div v-for="skill in shownSkills" :key="skill.name"
-                        class="col-span-1 w-full min-w-[100px] lg:min-w-[180px] flex flex-col items-center justify-center bg-[#3D3E42] hover:bg-[#F0BF6C99] duration-300 rounded-lg p-4">
+            <div class="grid grid-rows-2 grid-cols-2 sm:grid-cols-4 xl:grid-cols-6 gap-4 text-white text-xl">
+                <div v-for="skill in skills" :key="skill.name"
+                    class="col-span-1 w-full min-w-[100px] lg:min-w-[180px] flex flex-col items-center justify-center bg-[#3D3E42] hover:bg-[#F0BF6C99] duration-300 rounded-lg p-4">
 
-                        <div class="w-[50px] lg:w-[100px] mb-4">
-                            <img :src="skill.icon" alt="skill icon">
-                        </div>
-                        <div>
-                            <p>{{ skill.name }}</p>
-                        </div>
+                    <div class="w-[50px] lg:w-[100px] mb-4">
+                        <img :src="skill.icon" alt="skill icon">
+                    </div>
+                    <div>
+                        <p>{{ skill.name }}</p>
                     </div>
                 </div>
-            </Transition>
-
-            <!-- </div> -->
-            <div class="flex justify-end text-white fill-[#FFFFFF] hover:text-[#F0BF6C] hover:fill-[#F0BF6C] duration-300 items-center cursor-pointer"
-                @click="showMore = !showMore">
-                <ArrowRight size="12" class="mt-1" :class="showMore ? '-rotate-90 mr-2' : ' order-1 ml-2 rotate-90'" />
-
-                <p v-if="!showMore" class=" text-base font-medium">More</p>
-                <p v-else class=" text-base font-medium ">Less</p>
-
             </div>
         </div>
     </div>
@@ -38,10 +24,7 @@
 
 <script setup>
 
-import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
-import ArrowRight from './icons/ArrowRight.vue';
-
-const showMore = ref(false)
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 
 const skills = [
     { name: "React", icon: "/images/skills/react.png" },
@@ -57,16 +40,8 @@ const skills = [
     { name: "Nest JS", icon: "/images/skills/nestjs.png" },
     { name: "Javascript", icon: "/images/skills/js.png" }
 ];
-const minXl = ref(false)
 
-const shownSkills = computed(() => {
-    if (!showMore.value & minXl.value) {
-        return skills.slice(0, 6)
-    } else if (!showMore.value & !minXl.value) {
-        return skills.slice(0, 4)
-    }
-    return skills
-})
+const minXl = ref(false)
 
 const screenWidth = ref(1920)
 

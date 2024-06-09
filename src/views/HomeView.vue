@@ -54,7 +54,7 @@ const skills = ref(null);
 const contacts = ref(null);
 
 function scrollTo(view) {
-  view.scrollIntoView();
+  view.scrollIntoView({ behavior: 'smooth' });
 }
 
 </script>

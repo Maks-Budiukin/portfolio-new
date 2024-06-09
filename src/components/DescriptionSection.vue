@@ -11,11 +11,12 @@
 
                     <div class="flex flex-col lg:flex-row items-center lg:items-start xl:items-center gap-12">
 
-                        <div class="max-w-full md:max-w-[75%] lg:max-w-[50%] lg:order-1">
+                        <div
+                            class="flex-1 flex justify-center items-center max-w-full md:max-w-[75%] lg:max-w-[50%] lg:order-1">
                             <CarouselSection :data="pageGallery" />
                         </div>
 
-                        <div class="flex flex-col gap-8 sm:items-center lg:items-start">
+                        <div class="flex-1 flex flex-col gap-8 sm:items-center lg:items-start">
                             <div class="hidden lg:block mb-6">
                                 <h1 class="font-semibold text-6xl sm:text-7xl text-white text-center lg:text-left">
                                     {{ pageHeader }}</h1>
@@ -71,6 +72,10 @@ const props = defineProps({
     data: {
         type: Object,
         required: true,
+    },
+    loading: {
+        type: Boolean,
+        default: false
     }
 })
 

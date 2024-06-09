@@ -2,7 +2,7 @@
   <main class="bg-common">
 
     <section ref="description" class="scroll-mt-12">
-      <DescriptionSection :data="pageData" />
+      <DescriptionSection :data="pageData" :loading="loading" />
     </section>
 
     <div class="flex justify-center items-center bg-common sticky top-0 left-0 right-0 z-[10] shadow-lg">
@@ -38,6 +38,7 @@ import NavButton from '../components/ui/NavButton.vue'
 
 import { ref, onMounted, onBeforeMount } from 'vue';
 import { useFetch } from '@/composables/useFetch';
+
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -47,14 +48,22 @@ const myRole = ref(null);
 const contacts = ref(null);
 
 function scrollTo(view) {
-  view.scrollIntoView();
+  view.scrollIntoView({ behavior: 'smooth' });
 }
 
 const pageData = ref({})
 
+const loading = ref(false)
+
 const getData = async () => {
+
+  loading.value = true
+
   const { data } = await useFetch(route.fullPath)
+
   pageData.value = data.data
+  loading.value = false
+  loading
 }
 
 getData()

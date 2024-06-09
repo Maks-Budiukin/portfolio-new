@@ -131,11 +131,11 @@ import Email from './icons/Email.vue'
 import LinkedIn from './icons/LinkedIn.vue'
 import Viber from './icons/Viber.vue'
 import Button from './ui/Button.vue'
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 
 
 
-import { ref, sendMessage } from '@/composables/sendMessage'
+import { sendMessage } from '@/composables/sendMessage'
 
 const name = ref('')
 const email = ref('')

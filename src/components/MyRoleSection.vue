@@ -47,8 +47,6 @@ const props = defineProps({
     }
 })
 
-console.log(props.data?.attributes?.myRoles)
-
 const roles = computed(() => {
     return props.data?.attributes?.myRoles
 })
