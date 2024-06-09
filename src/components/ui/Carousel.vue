@@ -12,8 +12,8 @@
                     <div class="py-4 border-y-[2px] border-[#F0BF6C] sm:border-none">
                         <Transition :name="transitionName" mode="out-in">
 
-                            <img :key="currentImage" :src="`http://localhost:1337${currentImage}`" alt=""
-                                class="w-full sm:rounded-lg cursor-pointer big-image" @click="handleOpenModal">
+                            <img @load="imageLoading" :key="currentImage" :src="`http://localhost:1337${currentImage}`"
+                                alt="" class="w-full sm:rounded-lg cursor-pointer big-image" @click="handleOpenModal">
                         </Transition>
 
                     </div>
@@ -31,12 +31,12 @@
                     <div class="flex gap-[2px] items-center">
 
 
-                        <div v-for="(image, idx) in data" :key="image.id"
+                        <div v-for="(image, idx) in images" :key="image"
                             class="min-w-[200px] duration-300 border-[3px] rounded p-1 cursor-pointer"
                             :class="idx === currentImageIndex ? 'border-[#F0BF6C] min-w-[220px]' : 'border-transparent'">
 
-                            <img @load="imageLoading" :src="`http://localhost:1337${image.attributes.url}`" alt=""
-                                @click="changeImage(idx)" class="rounded-sm">
+                            <img :src="`http://localhost:1337${image}`" alt="" @click="changeImage(idx)"
+                                class="rounded-sm">
                         </div>
 
                     </div>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <CarouselModal :open="open" @close="open = false" :images="images"
-            :currentImage="`http://localhost:1337${currentImage}`" v-model="currentImageIndex" />
+            :currentImage="`http://localhost:1337${currentFullImage}`" v-model="currentImageIndex" />
     </div>
 </template>
 
@@ -74,17 +74,22 @@ const imageLoading = () => {
     isImageLoaded.value = true
     nextTick(() => {
         activeImagePosition()
+        console.log('data', props.data)
     })
 }
 
 const currentImageIndex = ref(2)
 
 const images = computed(() => {
-    return props.data?.map(image => image.attributes.url)
+    return props.data?.map(image => image.attributes.formats.large.url)
 })
 
 const currentImage = computed(() => {
     return images?.value[currentImageIndex.value]
+})
+
+const currentFullImage = computed(() => {
+    return props.data[currentImageIndex.value]?.attributes.url
 })
 
 const open = ref(false)

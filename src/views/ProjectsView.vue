@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-common">
+  <main class="bg-[#141414] bg-common">
 
     <section ref="description" class="scroll-mt-12">
       <DescriptionSection :data="pageData" :loading="loading" />
@@ -66,12 +66,12 @@ const getData = async () => {
   loading
 }
 
-getData()
+
 
 
 
 onBeforeMount(() => {
-
+  getData()
 })
 
 onMounted(() => {

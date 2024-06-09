@@ -1,5 +1,5 @@
 <template>
-  <main class="relative bg-common">
+  <main class="relative bg-[#141414] bg-common">
 
     <section ref="hero">
       <HeroSection />

@@ -17,7 +17,7 @@
                 </div>
 
                 <div>
-                    <div class="mb-6">
+                    <div class="mb-10">
                         <p class="text-white text-xl sm:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl">
                             &#8213;
                             <span class="text-[#F0BF6C]">Contact</span> me via:
@@ -25,54 +25,64 @@
                     </div>
 
                     <div class="flex flex-col gap-3">
-                        <div
-                            class="flex items-center gap-3 text-white text-lg hover:text-[#F0BF6C] stroke-[#FFFFFF] hover:stroke-[#F0BF6C] duration-300 cursor-pointer">
-                            <div>
-                                <Telegram size="32" />
-                            </div>
-                            <div>
-                                <p class="">Telegram</p>
-                            </div>
+                        <div>
+                            <a href="https://t.me/bud_maks" target="_blank"
+                                class="flex gap-3 items-center text-white text-lg hover:text-[#F0BF6C] stroke-[#FFFFFF] hover:stroke-[#F0BF6C] duration-300">
+                                <div>
+                                    <Telegram size="32" />
+                                </div>
+                                <div>
+                                    <p class="">Telegram</p>
+                                </div>
+                            </a>
                         </div>
 
-                        <div
-                            class="flex items-center gap-3 text-white text-lg hover:text-[#F0BF6C] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300 cursor-pointer">
-                            <div>
-                                <Whatsapp size="32" />
-                            </div>
-                            <div>
-                                <p class="">WhatsApp</p>
-                            </div>
+                        <!-- <div>
+                            <a href="https://t.me/bud_maks" target="_blank"
+                                class="flex gap-3 items-center text-white text-lg hover:text-[#F0BF6C] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300">
+                                <div>
+                                    <Whatsapp size="32" />
+                                </div>
+                                <div>
+                                    <p class="">WhatsApp</p>
+                                </div>
+                            </a>
                         </div>
 
-                        <div
-                            class="flex items-center gap-3 text-white text-lg hover:text-[#F0BF6C] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300 cursor-pointer">
-                            <div>
-                                <Viber size="32" />
-                            </div>
-                            <div>
-                                <p>Viber</p>
-                            </div>
+                        <div>
+                            <a href="https://t.me/bud_maks" target="_blank"
+                                class="flex gap-3 items-center text-white text-lg hover:text-[#F0BF6C] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300">
+                                <div>
+                                    <Viber size="32" />
+                                </div>
+                                <div>
+                                    <p class="">Viber</p>
+                                </div>
+                            </a>
+                        </div> -->
+
+                        <div>
+                            <a href="mailto:maks.budyukin@gmail.com" target="_blank"
+                                class="flex gap-3 items-center text-white text-lg hover:text-[#F0BF6C] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300">
+                                <div>
+                                    <Email size="32" />
+                                </div>
+                                <div>
+                                    <p class="">Mail</p>
+                                </div>
+                            </a>
                         </div>
 
-                        <div
-                            class="flex items-center gap-3 text-white text-lg hover:text-[#F0BF6C] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300 cursor-pointer">
-                            <div>
-                                <Email size="32" />
-                            </div>
-                            <div>
-                                <p>Mail</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="flex items-center gap-3 text-white text-lg hover:text-[#F0BF6C] flii-[#ffffff] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300 cursor-pointer">
-                            <div>
-                                <LinkedIn size="32" />
-                            </div>
-                            <div>
-                                <p class="">LinkedIn</p>
-                            </div>
+                        <div>
+                            <a href="https://www.linkedin.com/in/maksym-budiukin/" target="_blank"
+                                class="flex gap-3 items-center text-white text-lg hover:text-[#F0BF6C] fill-[#FFFFFF] hover:fill-[#F0BF6C] duration-300">
+                                <div>
+                                    <LinkedIn size="32" />
+                                </div>
+                                <div>
+                                    <p class="">LinkedIn</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="">
-                            <img src="/pic13.png" alt="Max's photo" class="max-h-[400px]">
+                            <img src="/pic15.webp" alt="Max's photo" class="max-h-[400px]">
                         </div>
                     </div>
 
@@ -65,29 +65,43 @@
                     </div>
                 </div>
                 <div class="hidden min-[505px]:block lg:flex items-end min-w-[210px]">
+
                     <div class=" ">
-                        <img src="/pic13.png" alt="Max's photo" class="max-h-[500px]">
+                        <img src="/pic15.webp" alt="Max's photo" class="max-h-[500px]">
                     </div>
+
                     <div class="grid grid-cols-4 lg:grid-cols-1 gap-3 md:px-5 py-5 lg:py-0">
 
                         <div class="hidden lg:flex col-span-1 w-full justify-center">
                             <div class=" border-[2px] w-[1px] border-[#F0BF6C] h-[192px]"></div>
                         </div>
 
-                        <div class="col-span-1 cursor-pointer stroke-white hover:stroke-[#F0BF6C] duration-300">
-                            <Telegram :size="minLg ? '48' : '36'" />
+                        <div class="col-span-1">
+                            <a href="https://t.me/bud_maks" target="_blank"
+                                class="stroke-white hover:stroke-[#F0BF6C] duration-300">
+                                <Telegram :size="minLg ? '48' : '36'" />
+                            </a>
                         </div>
 
-                        <div class="col-span-1 cursor-pointer fill-white hover:fill-[#F0BF6C] duration-300">
-                            <Github :size="minLg ? '48' : '36'" />
+                        <div class="col-span-1">
+                            <a href="https://github.com/Maks-Budiukin" target="_blank"
+                                class="fill-white hover:fill-[#F0BF6C] duration-300">
+                                <Github :size="minLg ? '48' : '36'" />
+                            </a>
                         </div>
 
-                        <div class="col-span-1 cursor-pointer stroke-white hover:stroke-[#F0BF6C] duration-300">
-                            <Gitlab :size="minLg ? '48' : '36'" />
+                        <div class="col-span-1">
+                            <a href="https://gitlab.com/maksym-budyukin" target="_blank"
+                                class="stroke-white hover:stroke-[#F0BF6C] duration-300">
+                                <Gitlab :size="minLg ? '48' : '36'" />
+                            </a>
                         </div>
 
-                        <div class="col-span-1 cursor-pointer fill-white hover:fill-[#F0BF6C] duration-300">
-                            <LinkedIn :size="minLg ? '48' : '36'" />
+                        <div class="col-span-1">
+                            <a href="https://www.linkedin.com/in/maksym-budiukin/" target="_blank"
+                                class="fill-white hover:fill-[#F0BF6C] duration-300">
+                                <LinkedIn :size="minLg ? '48' : '36'" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -135,7 +149,7 @@ watch(screenWidth, (val) => {
     } else {
         minLg.value = false
     }
-})
+}, { immediate: true })
 </script>
 
 <style lang="scss" scoped></style>
