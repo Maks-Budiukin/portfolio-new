@@ -5,10 +5,10 @@
             <div class="relative w-full max-h-screen">
                 <ArrowButton :direction="'left'" shadow @click="onLeft" />
 
-                <div class=" ">
+                <div class="flex justify-center ">
                     <Transition :name="transitionName" mode="out-in">
                         <img v-if="currentImage" :key="currentImage" :src="currentImage" alt="screenshot"
-                            class=" max-h-screen">
+                            class=" max-h-screen ">
                     </Transition>
                 </div>
 

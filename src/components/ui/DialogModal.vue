@@ -8,11 +8,11 @@
 
     <transition :name="'fade'">
       <div v-if="open"
-        class="fixed z-[20] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] max-h-screen rounded-lg"
+        class="fixed z-[20] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-h-screen rounded-lg"
         role="dialog">
 
 
-        <div class="w-full max-h-screen">
+        <div class=" max-h-screen">
           <slot name="modal-content" />
         </div>
       </div>
