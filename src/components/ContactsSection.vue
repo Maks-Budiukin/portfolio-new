@@ -135,11 +135,11 @@
 </template>
 
 <script setup>
-import Whatsapp from './icons/Whatsapp.vue'
+// import Whatsapp from './icons/Whatsapp.vue'
+// import Viber from './icons/Viber.vue'
 import Telegram from './icons/Telegram.vue'
 import Email from './icons/Email.vue'
 import LinkedIn from './icons/LinkedIn.vue'
-import Viber from './icons/Viber.vue'
 import Button from './ui/Button.vue'
 import { ref, computed } from 'vue'
 
