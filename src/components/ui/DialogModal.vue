@@ -12,7 +12,7 @@
         role="dialog">
 
 
-        <div class=" max-h-screen">
+        <div class="max-h-screen">
           <slot name="modal-content" />
         </div>
       </div>

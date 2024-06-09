@@ -36,8 +36,8 @@
                             class="min-w-[200px] duration-300 border-[3px] rounded p-1 cursor-pointer"
                             :class="idx === currentImageIndex ? 'border-[#F0BF6C] min-w-[220px]' : 'border-transparent'">
 
-                            <img :src="`https://test-strapi-mrqj.onrender.com${image}`" alt=""
-                                @click="changeImage(idx)" class="rounded-sm">
+                            <img :src="`https://test-strapi-mrqj.onrender.com${image}`" alt="" @click="changeImage(idx)"
+                                class="rounded-sm">
                         </div>
 
                     </div>
@@ -75,7 +75,6 @@ const imageLoading = () => {
     isImageLoaded.value = true
     nextTick(() => {
         activeImagePosition()
-        console.log('data', props.data)
     })
 }
 
@@ -86,7 +85,7 @@ const images = computed(() => {
 })
 
 const currentImage = computed(() => {
-    return images?.value[currentImageIndex.value]
+    return images?.value[currentImageIndex.value] || ''
 })
 
 const currentFullImage = computed(() => {

@@ -66,16 +66,8 @@ const getData = async () => {
   loading
 }
 
-
-
-
-
 onBeforeMount(() => {
   getData()
-})
-
-onMounted(() => {
-
 })
 
 </script>

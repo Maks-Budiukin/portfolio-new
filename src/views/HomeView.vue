@@ -22,7 +22,7 @@
       <ExperienceSection />
     </section>
 
-    <section ref="portfolio" class="scroll-mt-12">
+    <section ref="portfolio" id="#portfolio" class="scroll-mt-12">
       <PortfolioSection />
     </section>
 

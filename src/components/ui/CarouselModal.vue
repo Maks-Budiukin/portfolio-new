@@ -8,11 +8,12 @@
                 <div class="flex justify-center ">
                     <Transition :name="transitionName" mode="out-in">
                         <img v-if="currentImage" :key="currentImage" :src="currentImage" alt="screenshot"
-                            class=" max-h-screen ">
+                            class="max-h-screen ">
                     </Transition>
                 </div>
 
                 <ArrowButton shadow @click="onRight" />
+                <button class="color-[#FFFFFF] absolute right-3 top-3 z-[32]">X</button>
             </div>
         </template>
     </DialogModal>
