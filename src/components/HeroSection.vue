@@ -15,20 +15,32 @@
 
                         <div class="flex flex-col gap-3 md:px-5">
 
-                            <div class="col-span-1 cursor-pointer stroke-white hover:stroke-[#F0BF6C] duration-300">
-                                <Telegram :size="minLg ? '48' : '64'" />
+                            <div class="col-span-1">
+                                <a href="https://t.me/bud_maks" target="_blank"
+                                    class="stroke-white hover:stroke-[#F0BF6C] duration-300">
+                                    <Telegram :size="minLg ? '48' : '64'" />
+                                </a>
                             </div>
 
-                            <div class="col-span-1 cursor-pointer fill-white hover:fill-[#F0BF6C] duration-300">
-                                <Github :size="minLg ? '48' : '64'" />
+                            <div class="col-span-1">
+                                <a href="https://github.com/Maks-Budiukin" target="_blank"
+                                    class="fill-white hover:fill-[#F0BF6C] duration-300">
+                                    <Github :size="minLg ? '48' : '64'" />
+                                </a>
                             </div>
 
-                            <div class="col-span-1 cursor-pointer stroke-white hover:stroke-[#F0BF6C] duration-300">
-                                <Gitlab :size="minLg ? '48' : '64'" />
+                            <div class="col-span-1">
+                                <a href="https://gitlab.com/maksym-budyukin" target="_blank"
+                                    class="stroke-white hover:stroke-[#F0BF6C] duration-300">
+                                    <Gitlab :size="minLg ? '48' : '64'" />
+                                </a>
                             </div>
 
-                            <div class="col-span-1 cursor-pointer fill-white hover:fill-[#F0BF6C] duration-300">
-                                <LinkedIn :size="minLg ? '48' : '64'" />
+                            <div class="col-span-1">
+                                <a href="https://www.linkedin.com/in/maksym-budiukin/" target="_blank"
+                                    class="fill-white hover:fill-[#F0BF6C] duration-300">
+                                    <LinkedIn :size="minLg ? '48' : '64'" />
+                                </a>
                             </div>
                         </div>
 
