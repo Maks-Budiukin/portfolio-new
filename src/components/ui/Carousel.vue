@@ -12,8 +12,8 @@
                     <div class="py-4 border-y-[2px] border-[#F0BF6C] sm:border-none">
                         <Transition :name="transitionName" mode="out-in">
 
-                            <img @load="imageLoading" :key="currentImage" :src="`http://localhost:1337${currentImage}`"
-                                alt="" class="w-full sm:rounded-lg cursor-pointer big-image" @click="handleOpenModal">
+                            <img :key="currentImage" :src="`http://localhost:1337${currentImage}`" alt=""
+                                class="w-full sm:rounded-lg cursor-pointer big-image" @click="handleOpenModal">
                         </Transition>
 
                     </div>
@@ -35,8 +35,8 @@
                             class="min-w-[200px] duration-300 border-[3px] rounded p-1 cursor-pointer"
                             :class="idx === currentImageIndex ? 'border-[#F0BF6C] min-w-[220px]' : 'border-transparent'">
 
-                            <img :src="`http://localhost:1337${image.attributes.url}`" alt="" @click="changeImage(idx)"
-                                class="rounded-sm">
+                            <img @load="imageLoading" :src="`http://localhost:1337${image.attributes.url}`" alt=""
+                                @click="changeImage(idx)" class="rounded-sm">
                         </div>
 
                     </div>
