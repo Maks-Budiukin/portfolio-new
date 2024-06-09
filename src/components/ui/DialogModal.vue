@@ -12,7 +12,7 @@
         role="dialog">
 
 
-        <div class="w-[90vw]">
+        <div class="w-full max-h-screen">
           <slot name="modal-content" />
         </div>
       </div>

@@ -2,13 +2,13 @@
     <DialogModal v-if="open" :open="open" @close="$emit('close')">
         <template #modal-content>
 
-            <div class="relative w-[90vw]">
+            <div class="relative w-full max-h-screen">
                 <ArrowButton :direction="'left'" shadow @click="onLeft" />
 
-                <div class="bg-[#FFFFFF]">
+                <div class=" ">
                     <Transition :name="transitionName" mode="out-in">
                         <img v-if="currentImage" :key="currentImage" :src="currentImage" alt="screenshot"
-                            class="w-full">
+                            class=" max-h-screen">
                     </Transition>
                 </div>
 
@@ -76,7 +76,7 @@ const onLeft = () => {
 .right-leave-active,
 .left-enter-active,
 .left-leave-active {
-    transition: transform 0.2s ease, opacity 0.4s ease-in-out;
+    transition: transform 0.2s ease, opacity 0.3s ease-in-out;
 }
 
 .right-enter-from {
